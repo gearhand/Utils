@@ -8,9 +8,31 @@
     <artifactId>FileSearcher</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <maven.repo>/home/igor/.m2/repository/</maven.repo>
-    </properties>
+    <profiles>
+        <profile>
+            <id>Windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <maven.repo>C:\Users\Igor\.m2\repository\</maven.repo>
+            </properties>
+        </profile>
+        <profile>
+            <id>Linux</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <maven.repo>/home/igor/.m2/repository/</maven.repo>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>commons-cli</groupId>

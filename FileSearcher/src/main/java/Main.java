@@ -39,8 +39,6 @@ public class Main {
         catch (IOException io) {
             System.err.println(io.getMessage());
         }
-        //System.out.println(workDir);
-	// write your code here
     }
 
     static private class MyChecker extends SimpleFileVisitor<Path> {
@@ -83,10 +81,5 @@ public class Main {
             }
             return FileVisitResult.CONTINUE;
         }
-
-        /*
-        FileVisitResult visitFileFailed (T file, IOException exc) {
-            // Don't really now what to do
-        }*/
     }
 }
